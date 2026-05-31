@@ -1,0 +1,1109 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { bairros } from '../data/bairros.js';
+
+// SEO Title e Description otimizados para Goiânia
+const pageTitle = "Enio Auto Socorro - Guincho 24 Horas em Goiânia e Aparecida";
+const pageDescription = "Precisa de guincho em Goiânia ou Aparecida de Goiânia? O Enio Auto Socorro oferece reboque rápido plataforma 24h para carros, motos e caminhonetes leves. Ligue agora!";
+
+// FAQ Schema.org Structured Data
+const faqSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Qual o tempo médio de chegada do guincho?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Nosso tempo médio de chegada em Goiânia e Aparecida de Goiânia é de 20 a 40 minutos, dependendo do trânsito e da localização exata do veículo. Como estamos estrategicamente baseados no Setor Urias Magalhães, conseguimos um deslocamento muito rápido."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Quais tipos de veículos o Enio Auto Socorro atende?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Atendemos carros de passeio de todos os modelos, motocicletas de baixa e alta cilindrada, picapes e caminhonetes leves (como S10, Hilux, Ranger) e utilitários leves. Nosso guincho plataforma hidráulico é moderno e preparado para transporte seguro."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Qual o valor do serviço de guincho em Goiânia?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "O valor do guincho varia de acordo com a distância a ser percorrida (quilometragem) e o tipo de veículo. Oferecemos o melhor custo-benefício de Goiânia, com preços justos e sem taxas ocultas. Entre em contato pelo WhatsApp para um orçamento imediato e sem compromisso."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "O Enio Auto Socorro funciona nos fins de semana e feriados?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sim! Funcionamos 24 horas por dia, 7 dias por semana, incluindo domingos, feriados e madrugadas. Se precisar de auto socorro a qualquer hora, nossa equipe estará de prontidão para te atender."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Quais são as formas de pagamento aceitas?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Para sua total comodidade no momento da emergência, aceitamos pagamentos via PIX, cartões de crédito e débito, além de dinheiro em espécie."
+      }
+    }
+  ]
+});
+---
+
+<Layout title={pageTitle} description={pageDescription} schema={faqSchema}>
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="container hero-grid">
+      <div class="hero-text-content">
+        <span class="hero-badge">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="emerg-icon"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+          Serviço de Guincho Rápido 24 Horas
+        </span>
+        <h1>Enio Auto Socorro: Guincho 24h em Goiânia e Região</h1>
+        <p class="hero-lead">
+          Seu carro quebrou, sofreu um sinistro ou precisa ser transportado? Nós resolvemos com agilidade! Oferecemos <strong>guincho plataforma 24 horas</strong> para carros, motos e caminhonetes leves, <strong>atendendo com rapidez 100% de Goiânia, Aparecida de Goiânia e toda a região metropolitana!</strong>
+        </p>
+        
+        <div class="hero-cta-buttons">
+          <a href="tel:+5562991934930" class="btn btn-tel pulsate-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+            LIGAR: (62) 99193-4930
+          </a>
+          <a href="https://api.whatsapp.com/send?phone=5562991934930" target="_blank" rel="noopener noreferrer" class="btn btn-wa">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+            CHAMAR NO WHATSAPP
+          </a>
+        </div>
+        
+        <div class="hero-features-list">
+          <div class="hero-feature-item">
+            <span class="check-icon">✓</span> Plataforma Hidráulica
+          </div>
+          <div class="hero-feature-item">
+            <span class="check-icon">✓</span> Chegada em até 30 min
+          </div>
+          <div class="hero-feature-item">
+            <span class="check-icon">✓</span> Menor Preço da Região
+          </div>
+        </div>
+      </div>
+      
+      <div class="hero-visual">
+        <div class="hero-card-image">
+          <img src="/images/banner.jpg" alt="Enio Auto Socorro Guincho 24h em Goiânia" class="hero-main-img" width="576" height="324" />
+          <div class="hero-floating-badge">
+            <span class="badge-title">Base Própria</span>
+            <span class="badge-subtitle">Setor Urias Magalhães</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Diferenciais / Confiança -->
+  <section class="trust-section" id="diferenciais">
+    <div class="container">
+      <div class="section-header">
+        <h2>Por Que Escolher o Enio Auto Socorro?</h2>
+        <p>Prestamos um serviço ágil e profissional para que você tenha a melhor experiência mesmo em momentos difíceis.</p>
+      </div>
+      
+      <div class="trust-grid">
+        <div class="trust-card">
+          <div class="trust-icon-box">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="trust-icon"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+          </div>
+          <h3>Disponibilidade 24H</h3>
+          <p>Pane seca, mecânica ou colisão no meio da noite? Nosso guincho está de plantão 24h, de domingo a domingo, incluindo feriados.</p>
+        </div>
+        
+        <div class="trust-card">
+          <div class="trust-icon-box">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="trust-icon"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+          </div>
+          <h3>Rapidez Excepcional</h3>
+          <p>Como conhecemos Goiânia como a palma de nossa mão e temos base própria, conseguimos chegar ao local do chamado em tempo recorde.</p>
+        </div>
+        
+        <div class="trust-card">
+          <div class="trust-icon-box">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="trust-icon"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+          </div>
+          <h3>Segurança Garantida</h3>
+          <p>Equipamentos modernos com plataforma hidráulica e amarrações homologadas que garantem que seu carro ou picape chegue intacto ao destino.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Nossos Serviços -->
+  <section class="services-section" id="servicos">
+    <div class="container">
+      <div class="section-header">
+        <h2>Serviços de Auto Socorro Especializados</h2>
+        <p>Dispomos de guincho ideal para transportes leves e médios com o cuidado que seu patrimônio merece.</p>
+      </div>
+      
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-img-wrapper">
+            <img src="/images/service_car.jpg" alt="Guincho de carros de passeio Goiânia" class="service-img" />
+            <span class="service-price-tag">Custo-Benefício</span>
+          </div>
+          <div class="service-content">
+            <h3>Guincho para Carros</h3>
+            <p>
+              Reboque especializado para carros de passeio de todos os portes: hatches, sedans, SUVs e esportivos. Transporte seguro em plataforma hidráulica de última geração.
+            </p>
+            <a href="https://api.whatsapp.com/send?phone=5562991934930&text=Olá!%20Preciso%20de%20um%20guincho%20para%20carro." class="service-link" target="_blank" rel="noopener noreferrer">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="service-wa-icon"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+              Solicitar Reboque via WhatsApp
+            </a>
+          </div>
+        </div>
+
+        <div class="service-card">
+          <div class="service-img-wrapper">
+            <img src="/images/service_pickup.jpg" alt="Guincho de caminhonetes e picapes Goiânia" class="service-img" />
+            <span class="service-price-tag">Carga Leve/Média</span>
+          </div>
+          <div class="service-content">
+            <h3>Guincho de Caminhonetes Leves</h3>
+            <p>
+              Plataforma robusta ideal para o transporte de caminhonetes e picapes leves (como S10, Hilux, Ranger, Toro, Oroch, Saveiro e Montana) com amarrações reforçadas de segurança.
+            </p>
+            <a href="https://api.whatsapp.com/send?phone=5562991934930&text=Olá!%20Preciso%20de%20um%20guincho%20para%20caminhonete." class="service-link" target="_blank" rel="noopener noreferrer">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="service-wa-icon"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+              Solicitar Reboque via WhatsApp
+            </a>
+          </div>
+        </div>
+
+        <div class="service-card">
+          <div class="service-img-wrapper">
+            <img src="/images/service_moto.jpg" alt="Guincho para motocicletas Goiânia" class="service-img" />
+            <span class="service-price-tag">Cuidado Total</span>
+          </div>
+          <div class="service-content">
+            <h3>Guincho para Motos</h3>
+            <p>
+              Transporte cuidadoso de motos de baixa e alta cilindrada. Possuímos fixação adequada para que sua motocicleta viaje na vertical de forma totalmente estável e segura.
+            </p>
+            <a href="https://api.whatsapp.com/send?phone=5562991934930&text=Olá!%20Preciso%20de%20um%20guincho%20para%20moto." class="service-link" target="_blank" rel="noopener noreferrer">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="service-wa-icon"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+              Solicitar Reboque via WhatsApp
+            </a>
+          </div>
+        </div>
+
+        <div class="service-card">
+          <div class="service-img-wrapper">
+            <img src="/images/service_kombi.jpg" alt="Socorro para veículos e projetos especiais" class="service-img" />
+            <span class="service-price-tag">Projetos Especiais</span>
+          </div>
+          <div class="service-content">
+            <h3>Veículos Especiais e Utilitários</h3>
+            <p>
+              Fazemos o reboque de kombis, minivans, food trucks e projetos customizados com segurança e capricho, garantindo a integridade em trajetos curtos ou longos.
+            </p>
+            <a href="https://api.whatsapp.com/send?phone=5562991934930&text=Olá!%20Preciso%20de%20um%20guincho%20para%20veículo%20especial." class="service-link" target="_blank" rel="noopener noreferrer">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="service-wa-icon"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+              Solicitar Reboque via WhatsApp
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quem Somos / Base Física -->
+  <section class="about-section" id="sobre">
+    <div class="container about-grid">
+      <div class="about-visual">
+        <div class="about-location-card">
+          <div class="map-mockup">
+            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="map-pin-icon"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+            <h4>Setor Urias Magalhães</h4>
+            <p>Rua Recife, Qd. 02, lt. 22 – Goiânia</p>
+          </div>
+          <div class="location-details">
+            <p><strong>Nossa Base Estratégica:</strong> Estar sediado no Setor Urias Magalhães nos coloca próximos às saídas para a rodovia e com acesso direto a avenidas expressas, facilitando a chegada rápida em qualquer setor das regiões Norte, Sul, Leste e Oeste de Goiânia.</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="about-text-content">
+        <h2>Mais de Uma Década de Tradição em Reboque 24h</h2>
+        <p>
+          O <strong>Enio Auto Socorro</strong> nasceu com a missão de oferecer um socorro na estrada que preza pela integridade do veículo e a tranquilidade do motorista. Entendemos que passar por um imprevisto com o carro é estressante, e por isso nossa postura é de total apoio, respeito e eficiência.
+        </p>
+        <p>
+          Trabalhamos exclusivamente com motoristas habilitados, equipamentos modernos e revisados periodicamente. Sejam carros importados de luxo, picapes de trabalho ou motocicletas, nós garantimos um serviço sem complicações.
+        </p>
+        
+        <div class="about-stats">
+          <div class="stat-item">
+            <span class="stat-num">24h</span>
+            <span class="stat-label">De Plantão Todos os Dias</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-num">100%</span>
+            <span class="stat-label">Frota Própria e Segura</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEO Local: Bairros Atendidos (O Segredo do SEO) -->
+  <section class="bairros-section" id="bairros">
+    <div class="container">
+      <div class="section-header">
+        <h2>Atendimento Rápido nos Principais Setores</h2>
+        <p>Clique no seu bairro ou setor para ver informações detalhadas sobre o nosso tempo de chegada e solicitar o guincho plataforma mais próximo de você.</p>
+      </div>
+
+      <div class="city-selector-group">
+        <h3 class="city-title">📍 Bairros de Goiânia - GO</h3>
+        <div class="bairros-grid">
+          {bairros.filter(b => b.city === 'Goiânia').map(b => (
+            <a href={`/guincho-em-${b.slug}`} class="bairro-card">
+              <span class="bairro-name">{b.name}</span>
+              <span class="bairro-time">⚡ Chegada Rápida</span>
+            </a>
+          ))}
+        </div>
+        
+        <h3 class="city-title city-title-ap">📍 Bairros de Aparecida de Goiânia - GO</h3>
+        <div class="bairros-grid">
+          {bairros.filter(b => b.city === 'Aparecida de Goiânia').map(b => (
+            <a href={`/guincho-em-${b.slug}`} class="bairro-card bairro-card-ap">
+              <span class="bairro-name">{b.name}</span>
+              <span class="bairro-time">⚡ Chegada Rápida</span>
+            </a>
+          ))}
+        </div>
+      </div>
+
+      <!-- Metropolitana Coverage Warning Banner -->
+      <div class="coverage-highlight-banner">
+        <div class="coverage-icon-wrapper">
+          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="coverage-icon"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+        </div>
+        <div class="coverage-content">
+          <h4>🚨 ATENÇÃO: Atendemos 100% de Goiânia, Aparecida e Região Metropolitana!</h4>
+          <p>Se o seu bairro ou setor não estiver listado na grade de principais setores acima, não se preocupe! <strong>Nossa frota de guinchos plataforma cobre absolutamente todas as regiões de Goiânia, Aparecida de Goiânia e municípios vizinhos da região metropolitana.</strong> Ligue ou nos envie sua localização no WhatsApp que enviaremos o auto socorro imediatamente!</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Dúvidas Frequentes (FAQ) -->
+  <section class="faq-section" id="faq">
+    <div class="container">
+      <div class="section-header">
+        <h2>Dúvidas Frequentes sobre Reboque e Guincho</h2>
+        <p>Separamos as principais perguntas de nossos clientes para ajudar você a entender melhor como funciona a contratação do auto socorro.</p>
+      </div>
+      
+      <div class="faq-accordion-container">
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>Qual o tempo médio de chegada do guincho?</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="faq-chevron"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </button>
+          <div class="faq-answer">
+            <p>Nosso tempo médio de chegada em Goiânia e Aparecida de Goiânia é de 20 a 40 minutos, dependendo do trânsito e da localização exata do veículo. Como estamos estrategicamente baseados no Setor Urias Magalhães, conseguimos um deslocamento muito rápido para qualquer região.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>Quais tipos de veículos o Enio Auto Socorro atende?</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="faq-chevron"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </button>
+          <div class="faq-answer">
+            <p>Atendemos carros de passeio de todos os modelos, motocicletas de baixa e alta cilindrada, picapes e caminhonetes leves (como S10, Hilux, Ranger, Toro) e utilitários leves. Nosso guincho plataforma hidráulico é moderno e preparado para transporte seguro. Não atendemos caminhões pesados.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>Qual o valor do serviço de guincho em Goiânia?</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="faq-chevron"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </button>
+          <div class="faq-answer">
+            <p>O valor do guincho varia de acordo com a distância a ser percorrida (quilometragem) e o tipo de veículo. Oferecemos o melhor custo-benefício de Goiânia, com preços altamente competitivos, transparentes e sem surpresas. Chame no WhatsApp e passe sua localização para um orçamento imediato.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>O Enio Auto Socorro funciona nos fins de semana e feriados?</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="faq-chevron"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </button>
+          <div class="faq-answer">
+            <p>Sim! Funcionamos 24 horas por dia, 7 dias por semana, incluindo sábados, domingos, feriados de madrugada. Se você tiver um imprevisto na estrada, pode entrar em contato a qualquer hora.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>Quais são as formas de pagamento aceitas?</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="faq-chevron"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </button>
+          <div class="faq-answer">
+            <p>Para facilitar o atendimento na rua, aceitamos pagamentos via Pix, cartões de crédito e débito (levamos a maquininha até você) e dinheiro em espécie.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Banner Final -->
+  <section class="final-cta-section">
+    <div class="container final-cta-content">
+      <h2>Veículo Quebrado ou Acidentado?</h2>
+      <p>Não fique esperando na rodovia ou rua deserta. Fale com o Enio Auto Socorro e garanta sua remoção com segurança e rapidez agora mesmo!</p>
+      
+      <div class="final-cta-buttons">
+        <a href="tel:+5562991934930" class="btn btn-tel pulsate-btn">
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+          LIGAR 24H: (62) 99193-4930
+        </a>
+        <a href="https://api.whatsapp.com/send?phone=5562991934930" target="_blank" rel="noopener noreferrer" class="btn btn-wa">
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+          CHAMAR WHATSAPP
+        </a>
+      </div>
+      
+      <p class="alternative-phone-text">Telefone de Apoio Alternativo: <a href="tel:+5562984300346"><strong>(62) 98430-0346</strong></a></p>
+    </div>
+  </section>
+
+  <!-- Interactive Accordion Script -->
+  <script>
+    const faqItems = document.querySelectorAll('.faq-item');
+    
+    faqItems.forEach(item => {
+      const question = item.querySelector('.faq-question');
+      
+      if (question) {
+        question.addEventListener('click', () => {
+          const expanded = question.getAttribute('aria-expanded') === 'true';
+          
+          // Fechar todas as outras perguntas
+          faqItems.forEach(otherItem => {
+            if (otherItem !== item) {
+              const otherBtn = otherItem.querySelector('.faq-question');
+              const otherAnswer = otherItem.querySelector('.faq-answer');
+              if (otherBtn && otherAnswer) {
+                otherBtn.setAttribute('aria-expanded', 'false');
+                (otherAnswer as HTMLElement).style.maxHeight = '0px';
+              }
+            }
+          });
+          
+          // Abrir/Fechar a atual
+          question.setAttribute('aria-expanded', String(!expanded));
+          const answer = item.querySelector('.faq-answer');
+          if (answer) {
+            if (!expanded) {
+              (answer as HTMLElement).style.maxHeight = (answer as HTMLElement).scrollHeight + 'px';
+            } else {
+              (answer as HTMLElement).style.maxHeight = '0px';
+            }
+          }
+        });
+      }
+    });
+  </script>
+</Layout>
+
+<style>
+  /* Hero Styles */
+  .hero-section {
+    background: linear-gradient(135deg, #020617 0%, #001e52 100%);
+    color: var(--white);
+    padding: 100px 0 120px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(circle at 80% 20%, rgba(0, 61, 165, 0.15) 0%, transparent 50%);
+    pointer-events: none;
+  }
+
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 40px;
+    align-items: center;
+  }
+
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(220, 38, 38, 0.15);
+    border: 1px solid rgba(220, 38, 38, 0.3);
+    color: #fca5a5;
+    padding: 6px 14px;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .emerg-icon {
+    color: #ef4444;
+    animation: flash 1s infinite alternate;
+  }
+
+  @keyframes flash {
+    0% { opacity: 0.4; }
+    100% { opacity: 1; }
+  }
+
+  .hero-text-content h1 {
+    font-size: 3rem;
+    line-height: 1.15;
+    color: var(--white);
+    margin-bottom: 20px;
+    letter-spacing: -1px;
+    text-transform: uppercase;
+  }
+
+  .hero-lead {
+    font-size: 1.2rem;
+    color: #cbd5e1;
+    margin-bottom: 40px;
+    max-width: 580px;
+  }
+
+  .hero-lead strong {
+    color: var(--white);
+  }
+
+  .hero-cta-buttons {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+  }
+
+  .pulsate-btn {
+    animation: button-pulsate 2s infinite ease-in-out;
+  }
+
+  @keyframes button-pulsate {
+    0%, 100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.03);
+      box-shadow: 0 0 15px rgba(220, 38, 38, 0.6);
+    }
+  }
+
+  .hero-features-list {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+
+  .hero-feature-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.9rem;
+    color: #94a3b8;
+    font-weight: 600;
+  }
+
+  .check-icon {
+    color: var(--accent);
+    font-weight: 800;
+    font-size: 1.1rem;
+  }
+
+  .hero-visual {
+    position: relative;
+  }
+
+  .hero-card-image {
+    position: relative;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    border: 4px solid rgba(255, 255, 255, 0.05);
+  }
+
+  .hero-main-img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+  }
+
+  .hero-card-image:hover .hero-main-img {
+    transform: scale(1.03);
+  }
+
+  .hero-floating-badge {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    background: rgba(15, 23, 42, 0.85);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 12px 20px;
+    border-radius: var(--radius-md);
+    color: var(--white);
+    box-shadow: var(--shadow-lg);
+  }
+
+  .badge-title {
+    display: block;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    font-weight: 800;
+    color: #38bdf8;
+    letter-spacing: 1px;
+  }
+
+  .badge-subtitle {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 0.95rem;
+  }
+
+  /* Trust Section */
+  .trust-section {
+    background-color: var(--gray-light);
+  }
+
+  .trust-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+  }
+
+  .trust-card {
+    background-color: var(--white);
+    padding: 40px 30px;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-sm);
+    transition: all 0.3s ease;
+    border-bottom: 4px solid transparent;
+  }
+
+  .trust-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--primary);
+  }
+
+  .trust-icon-box {
+    width: 60px;
+    height: 60px;
+    background-color: var(--primary-light);
+    color: var(--primary);
+    border-radius: var(--radius-sm);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 25px;
+  }
+
+  .trust-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+  }
+
+  .trust-card p {
+    color: var(--gray-dark);
+    font-size: 0.95rem;
+  }
+
+  /* Services Section */
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+
+  .service-card {
+    background-color: var(--white);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+    transition: all 0.3s ease;
+    border: 1px solid var(--gray-light);
+    display: flex;
+    flex-direction: column;
+  }
+
+  .service-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+  }
+
+  .service-img-wrapper {
+    position: relative;
+    height: 240px;
+    overflow: hidden;
+  }
+
+  .service-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+  }
+
+  .service-card:hover .service-img {
+    transform: scale(1.05);
+  }
+
+  .service-price-tag {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background-color: var(--primary-dark);
+    color: var(--white);
+    padding: 6px 14px;
+    border-radius: 50px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    box-shadow: var(--shadow-sm);
+  }
+
+  .service-content {
+    padding: 30px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .service-content h3 {
+    font-size: 1.4rem;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+  }
+
+  .service-content p {
+    color: var(--gray-dark);
+    margin-bottom: 25px;
+    font-size: 0.95rem;
+    flex-grow: 1;
+  }
+
+  .service-link {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    color: var(--accent);
+    font-size: 0.95rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    align-self: flex-start;
+  }
+
+  .service-link:hover {
+    color: var(--accent-hover);
+    transform: translateY(-1px);
+  }
+
+  .service-wa-icon {
+    width: 16px;
+    height: 16px;
+    fill: none;
+  }
+
+  /* About Section */
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 60px;
+    align-items: center;
+  }
+
+  .about-visual {
+    position: relative;
+  }
+
+  .about-location-card {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+    padding: 40px;
+    border-radius: var(--radius-lg);
+    color: var(--white);
+    box-shadow: var(--shadow-lg);
+  }
+
+  .map-mockup {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+    padding-bottom: 25px;
+    margin-bottom: 25px;
+  }
+
+  .map-pin-icon {
+    color: var(--accent);
+    margin-bottom: 15px;
+    animation: bounce 2s infinite;
+  }
+
+  @keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+  }
+
+  .map-mockup h4 {
+    color: var(--white);
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+  }
+
+  .map-mockup p {
+    color: #93c5fd;
+    font-size: 0.95rem;
+  }
+
+  .location-details p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #e0f2fe;
+  }
+
+  .location-details strong {
+    color: var(--white);
+    display: block;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 0.5px;
+  }
+
+  .about-text-content h2 {
+    font-size: 2.2rem;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+    letter-spacing: -0.5px;
+  }
+
+  .about-text-content p {
+    font-size: 1rem;
+    color: var(--gray-dark);
+    margin-bottom: 20px;
+  }
+
+  .about-stats {
+    display: flex;
+    gap: 30px;
+    margin-top: 35px;
+    border-top: 1px solid var(--gray-light);
+    padding-top: 25px;
+  }
+
+  .stat-item {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .stat-num {
+    font-family: var(--font-heading);
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--primary);
+    line-height: 1;
+  }
+
+  .stat-label {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--gray-dark);
+    text-transform: uppercase;
+  }
+
+  /* Bairros / Local SEO Section */
+  .bairros-section {
+    background-color: var(--gray-light);
+  }
+
+  .city-title {
+    font-size: 1.4rem;
+    margin: 30px 0 15px;
+    text-transform: uppercase;
+    border-left: 4px solid var(--primary);
+    padding-left: 12px;
+  }
+
+  .city-title-ap {
+    border-left-color: var(--accent);
+  }
+
+  .bairros-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+  }
+
+  .bairro-card {
+    background-color: var(--white);
+    padding: 16px 20px;
+    border-radius: var(--radius-sm);
+    box-shadow: var(--shadow-sm);
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    border: 1px solid #e2e8f0;
+  }
+
+  .bairro-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--primary);
+  }
+
+  .bairro-card-ap:hover {
+    border-color: var(--accent);
+  }
+
+  /* Coverage Highlight Banner */
+  .coverage-highlight-banner {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+    border-left: 5px solid var(--primary);
+    padding: 25px;
+    border-radius: var(--radius-md);
+    margin-top: 40px;
+    box-shadow: var(--shadow-sm);
+  }
+
+  .coverage-icon-wrapper {
+    color: var(--primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .coverage-content h4 {
+    font-size: 1.15rem;
+    color: var(--primary-dark);
+    margin-bottom: 6px;
+    text-transform: uppercase;
+  }
+
+  .coverage-content p {
+    font-size: 0.95rem;
+    color: var(--gray-dark);
+    margin: 0;
+    line-height: 1.5;
+  }
+
+  @media (max-width: 768px) {
+    .coverage-highlight-banner {
+      flex-direction: column;
+      text-align: center;
+      gap: 15px;
+    }
+  }
+
+  .bairro-name {
+    font-weight: 700;
+    font-size: 0.95rem;
+    color: var(--primary-dark);
+  }
+
+  .bairro-time {
+    font-size: 0.75rem;
+    color: #64748b;
+    font-weight: 600;
+  }
+
+  /* FAQ Accordion Styles */
+  .faq-accordion-container {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .faq-item {
+    background-color: var(--white);
+    border: 1px solid #e2e8f0;
+    border-radius: var(--radius-sm);
+    margin-bottom: 12px;
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+  }
+
+  .faq-question {
+    width: 100%;
+    padding: 20px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 1.05rem;
+    color: var(--primary-dark);
+    text-align: left;
+    transition: background-color 0.2s ease;
+  }
+
+  .faq-question:hover {
+    background-color: var(--primary-light);
+  }
+
+  .faq-chevron {
+    transition: transform 0.3s ease;
+    color: var(--primary);
+  }
+
+  .faq-question[aria-expanded="true"] .faq-chevron {
+    transform: rotate(180deg);
+  }
+
+  .faq-answer {
+    max-height: 0px;
+    overflow: hidden;
+    transition: max-height 0.3s cubic-bezier(0, 1, 0, 1);
+  }
+
+  .faq-answer p {
+    padding: 0 24px 20px;
+    color: var(--gray-dark);
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  /* Final CTA Banner */
+  .final-cta-section {
+    background: linear-gradient(135deg, var(--primary-dark) 0%, #081225 100%);
+    color: var(--white);
+    text-align: center;
+    padding: 80px 0;
+  }
+
+  .final-cta-content h2 {
+    color: var(--white);
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: -0.5px;
+  }
+
+  .final-cta-content p {
+    font-size: 1.15rem;
+    color: #cbd5e1;
+    max-width: 700px;
+    margin: 0 auto 35px;
+  }
+
+  .final-cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 25px;
+    flex-wrap: wrap;
+  }
+
+  .alternative-phone-text {
+    font-size: 0.95rem;
+    color: #94a3b8;
+  }
+
+  .alternative-phone-text a {
+    color: var(--white);
+  }
+
+  .alternative-phone-text a:hover {
+    color: var(--accent);
+  }
+
+  /* Responsive Adjustments */
+  @media (max-width: 992px) {
+    .hero-grid {
+      grid-template-columns: 1fr;
+      text-align: center;
+    }
+    .hero-badge, .hero-lead {
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .hero-text-content h1 {
+      font-size: 2.5rem;
+    }
+    .hero-cta-buttons, .hero-features-list {
+      justify-content: center;
+    }
+    .hero-visual {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    .trust-grid {
+      grid-template-columns: 1fr;
+    }
+    .services-grid {
+      grid-template-columns: 1fr;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    .about-grid {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+    .about-visual {
+      max-width: 600px;
+      margin: 0 auto;
+      width: 100%;
+    }
+    .bairros-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .hero-text-content h1 {
+      font-size: 2rem;
+    }
+    .bairros-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 480px) {
+    .bairros-grid {
+      grid-template-columns: 1fr;
+    }
+    .hero-cta-buttons .btn {
+      width: 100%;
+    }
+    .final-cta-buttons .btn {
+      width: 100%;
+    }
+  }
+</style>
