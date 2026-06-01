@@ -1,6 +1,12 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import { bairros } from '../data/bairros.js';
+import { Image } from 'astro:assets';
+import bannerImg from '../assets/images/banner.png';
+import serviceCarImg from '../assets/images/service_car.png';
+import servicePickupImg from '../assets/images/service_pickup.png';
+import serviceMotoImg from '../assets/images/service_moto.jpg';
+import serviceKombiImg from '../assets/images/service_kombi.png';
 
 // SEO Title e Description otimizados para Goiânia
 const pageTitle = "Enio Auto Socorro - Guincho 24 Horas em Goiânia e Aparecida";
@@ -95,7 +101,7 @@ const faqSchema = JSON.stringify({
       
       <div class="hero-visual">
         <div class="hero-card-image">
-          <img src="/images/banner.png" alt="Enio Auto Socorro Guincho 24h em Goiânia" class="hero-main-img" width="576" height="324" />
+          <Image src={bannerImg} alt="Enio Auto Socorro Guincho 24h em Goiânia" class="hero-main-img" width={576} height={324} loading="eager" />
           <div class="hero-floating-badge">
             <span class="badge-title">Base Própria</span>
             <span class="badge-subtitle">Setor Urias Magalhães</span>
@@ -152,7 +158,7 @@ const faqSchema = JSON.stringify({
       <div class="services-grid">
         <div class="service-card">
           <div class="service-img-wrapper">
-            <img src="/images/service_car.png" alt="Guincho de carros de passeio Goiânia" class="service-img" />
+            <Image src={serviceCarImg} alt="Guincho de carros de passeio Goiânia" class="service-img" width={400} height={250} loading="lazy" />
             <span class="service-price-tag">Custo-Benefício</span>
           </div>
           <div class="service-content">
@@ -169,7 +175,7 @@ const faqSchema = JSON.stringify({
 
         <div class="service-card">
           <div class="service-img-wrapper">
-            <img src="/images/service_pickup.png" alt="Guincho de caminhonetes e picapes Goiânia" class="service-img" />
+            <Image src={servicePickupImg} alt="Guincho de caminhonetes e picapes Goiânia" class="service-img" width={400} height={250} loading="lazy" />
             <span class="service-price-tag">Carga Leve/Média</span>
           </div>
           <div class="service-content">
@@ -186,7 +192,7 @@ const faqSchema = JSON.stringify({
 
         <div class="service-card">
           <div class="service-img-wrapper">
-            <img src="/images/service_moto.jpg" alt="Guincho para motocicletas Goiânia" class="service-img" />
+            <Image src={serviceMotoImg} alt="Guincho para motocicletas Goiânia" class="service-img" width={400} height={250} loading="lazy" />
             <span class="service-price-tag">Cuidado Total</span>
           </div>
           <div class="service-content">
@@ -203,7 +209,7 @@ const faqSchema = JSON.stringify({
 
         <div class="service-card">
           <div class="service-img-wrapper">
-            <img src="/images/service_kombi.png" alt="Socorro para veículos e projetos especiais" class="service-img" />
+            <Image src={serviceKombiImg} alt="Socorro para veículos e projetos especiais" class="service-img" width={400} height={250} loading="lazy" />
             <span class="service-price-tag">Projetos Especiais</span>
           </div>
           <div class="service-content">

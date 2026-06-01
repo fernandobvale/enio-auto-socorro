@@ -1,6 +1,11 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import { bairros } from '../data/bairros.js';
+import { Image } from 'astro:assets';
+import bannerImg from '../assets/images/banner.png';
+import serviceCarImg from '../assets/images/service_car.png';
+import servicePickupAltImg from '../assets/images/service_pickup_alt.png';
+import serviceMotoImg from '../assets/images/service_moto.jpg';
 
 export async function getStaticPaths() {
   return bairros.map((b) => ({
@@ -80,7 +85,7 @@ const neighborhoodSchema = JSON.stringify({
 
       <div class="local-hero-visual">
         <div class="local-visual-card">
-          <img src="/images/banner.png" alt={`Enio Auto Socorro servindo o ${bairroData.name}`} class="local-hero-img" />
+          <Image src={bannerImg} alt={`Enio Auto Socorro servindo o ${bairroData.name}`} class="local-hero-img" width={576} height={324} loading="eager" />
           <div class="local-floating-tag">
             <span class="pulse"></span> <strong>Chegada Estimada:</strong> 20 a 30 min
           </div>
@@ -162,21 +167,21 @@ const neighborhoodSchema = JSON.stringify({
       
       <div class="fleet-grid">
         <div class="fleet-card">
-          <img src="/images/service_car.png" alt="Guincho de carro em plataforma" />
+          <Image src={serviceCarImg} alt="Guincho de carro em plataforma" width={400} height={250} loading="lazy" />
           <div class="fleet-info">
             <h4>Carros de Passeio</h4>
             <p>Plataforma estável e segura para hatches e sedans.</p>
           </div>
         </div>
         <div class="fleet-card">
-          <img src="/images/service_pickup_alt.png" alt="Reboque de caminhonete leve" />
+          <Image src={servicePickupAltImg} alt="Reboque de caminhonete leve" width={400} height={250} loading="lazy" />
           <div class="fleet-info">
             <h4>Caminhonetes e Picapes</h4>
             <p>Equipamento robusto para transporte seguro de veículos de médio porte.</p>
           </div>
         </div>
         <div class="fleet-card">
-          <img src="/images/service_moto.jpg" alt="Transporte de motocicleta" />
+          <Image src={serviceMotoImg} alt="Transporte de motocicleta" width={400} height={250} loading="lazy" />
           <div class="fleet-info">
             <h4>Motos com Suporte Vertical</h4>
             <p>Segurança total com fixações projetadas para veículos de duas rodas.</p>
